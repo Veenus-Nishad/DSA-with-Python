@@ -1,25 +1,18 @@
 # Divide and Conquer based on a pivot element
-
+# ek array mein ek pivot choose karna generally pehla number then two sublist banana ek jisme pivot
+# se saare chote aur ek jisme pivot se bade and repaeat until sorted and concatenate lists
 arr=[5,8,1,2,6,3,9]
 
-def quick_sort(arr,low,high):
-  if low < high :
-    pivot=partition(arr,low,high) # pivot ke left mein jitte honge vo usse small and right wale bade
-    quick_sort(arr,low,pivot-1)
-    quick_sort(arr,pivot+1,high)
-
-def partition(arr,low,high):
-  p=arr[low]
-  i=low+1
-  j=high
-  while True:
-    while i<=j and arr[i]<=p: # goes left to righ and looks for the element greater than pivot 
-      i+=1
-    while i<=j and arr[j]>=p: # goes right to left and looks for the element smaller than pivot
-      j-=1
-    if i<=j: #swapping takes place here
-      arr[i],arr[j]=arr[j],arr[i]
-    else:
-      break
-    arr[low],arr[j]=arr[j],arr[low]
-    return j
+def quick_sort(arr):
+  if len(arr)<=1:
+    return arr
+  else:
+    pivot=arr[0]
+    #list comprehension
+    lesser=[x for x in arr[1:] if x<=pivot]
+    greater=[x for x in arr[1:] if x>pivot]
+    # recursive method
+    return quick_sort(lesser)+[pivot]+quick_sort(greater)
+  
+mylist=quick_sort(arr)
+print(mylist)
