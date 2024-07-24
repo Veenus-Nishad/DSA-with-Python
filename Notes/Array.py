@@ -14,7 +14,7 @@ print(my_array) # prints the above line only
 print("My second elemen is ",my_array[2])
 
 for x in my_array:
-  print(x)
+  print("h",x)
 
 for x in range(3):
   print(my_array[x])
