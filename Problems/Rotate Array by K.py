@@ -4,7 +4,7 @@ class Solution:
         for x in range(len(nums)):
             newIndex=(k+x)%len(nums) # Main Formula as anything by % comes between [0 to 9]
             temp[newIndex]=nums[x]
-        nums[:]=temp[:]
+        nums[:]=temp[:] 
         
         """
         Do not return anything, modify nums in-place instead.
