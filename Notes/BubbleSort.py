@@ -5,6 +5,7 @@ def BubbleSort(arr,n):
     for j in range(n-i-1):
       if arr[j]>arr[j+1]:
         arr[j],arr[j+1]=arr[j+1],arr[j]
+        didSwap+=1
     if didSwap==0:
       break
   return arr
